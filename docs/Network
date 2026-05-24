@@ -2,7 +2,7 @@
 
 This covers the network-related setup
 
-##Interface and IP
+# Interface and IP
 
 This server connects to my home network over WiFi
 The main networking goals were:
@@ -12,11 +12,11 @@ The main networking goals were:
 - Allow VMs to communicate with the server
 - Access web services such as Portainer and Nginx from another machine
 
-#Interface
+# Interface
 
 After installing, the interface was identified as 
 ```text
-w1o1
+wlo1
 ```
 which was found using:
 ```bash
