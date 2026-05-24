@@ -1,3 +1,7 @@
+# Basic Nginx test container
+# Access from another device on the LAN at:
+# http://SERVER_IP:8080
+
 services:
   nginx:
     image: nginx:latest
