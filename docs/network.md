@@ -2,7 +2,7 @@
 
 This covers the network-related setup
 
-# Interface and IP
+## Interface and IP
 
 This server connects to my home network over WiFi
 The main networking goals were:
@@ -12,7 +12,7 @@ The main networking goals were:
 - Allow VMs to communicate with the server
 - Access web services such as Portainer and Nginx from another machine
 
-# Interface
+## Interface
 
 After installing, the interface was identified as 
 ```text
@@ -24,7 +24,7 @@ ip a
 ```
 The interface name is important because it's used in the netplan configuration
 
-# Wifi Configuration
+## Wifi Configuration
 
 Ubuntu uses Netplan for network configuration
 I found this file here"
@@ -60,19 +60,19 @@ A working connection should look like:
 inet 192.168.0.x/24
 ```
 
-# DHCP Reservation 
+## DHCP Reservation 
 
 I had to update my router's settings so that it keeps an IP address reserved for my server
 This allows the server to have a static IP, so I don't need to recheck every time
 Different ISPs will have different processes for this; mine was along the lines of checking a box and associating a MAC address with an IP.
 
-# Local Network Access
+## Local Network Access
 
 The server is intended to be accessed only from the local home network.
 No router port forwarding is currently configured.
 This keeps services such as SSH, Portainer, and test containers private to the LAN.
 
-# SSH
+## SSH
 
 Once the server has a static IP, it can be accessed from other machines on the LAN through:
 ```bash
@@ -80,7 +80,7 @@ ssh USER@IP_ADDRESS
 ```
 This allows for the server to be changed remotely, perfect as the computer it's hosted on doesn't have a working keyboard.
 
-# Virtual Machine Networking
+## Virtual Machine Networking
 
 A Kali Linux VM was used to test access from another machine.
 VM was set to a bridged adapter, which was set to my machine's real WiFi Adapter.
