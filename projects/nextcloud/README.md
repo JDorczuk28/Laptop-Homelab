@@ -28,6 +28,7 @@ The Docker Compose file is stored in this project folder as:
 ```text
 docker-compose.yml
 ```
+Resources needed to create this YAML can be found on Docker Hub.
 ## Database
 
 The database is set up when configuring Nextcloud for the first time; the information used was the details included in the YAML file used to create the stack.
