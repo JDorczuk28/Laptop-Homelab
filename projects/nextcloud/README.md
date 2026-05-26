@@ -34,6 +34,7 @@ The database is set up when configuring Nextcloud for the first time; the inform
 <img width="327" height="99" alt="image" src="https://github.com/user-attachments/assets/63dbb49e-9b53-4772-b7bc-494edb6f56cc" />
 
 NextCloud stores uploaded files in a Docker volume on the server, and MariaDB stores database data in a separate Docker volume on the server
+
 This means uploaded material will persist after restarts or outages.
 
 ## Testing
