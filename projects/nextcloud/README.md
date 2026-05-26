@@ -15,6 +15,7 @@ I used Portainer in order to containerize and deploy the stack for this project.
 ## Services Running
 
 Nextcloud - a web-based file storage application
+
 nextcloud-db - MariaDB database used by Nextcloud
 
 ## Deployment
