@@ -54,9 +54,35 @@ By inspecting the data volume, we can find the mountpoint where everything is st
 Then I can simply visit the mountpoint, traverse the files, and find where my files are stored. 
 <img width="1565" height="37" alt="image" src="https://github.com/user-attachments/assets/54277304-b20f-4f4a-a409-978d30690496" />
 
+## TailScale Addition
+
+After confirming that Nextcloud worked locally, I downloaded Tailscale on my server for remote access outside of my LAN
+Tailscale allows approved devices to access my Nextcloud without exposing everything to the public, keeping my files safe.
+
+Access changes from
+```text
+https://SERVER_IP:8081
+```
+
+to
+
+```text
+https://TAILSCALE_IP:8081
+```
+
+## Trusted Domains
+
+Nextcloud needs to trust each IP used to access it
+My server IP was already trusted, but I had to add the tailscale IP generated for me to that list using:
+```bash
+docker exec -it nextcloud php /app/www/public/occ config:system:set trusted_domains 2 --value=TAILSCALE_IP
+```
+
+This allows me to be able to visit Nextcloud from the Tailscale IP on approved devices.
+
+
 ## Scope
-This is currently LAN only; the service can only be used by devices on my network.
-I do have plans to implement Tailscale later in order to add remote access.
+This is currently set up for LAN and remote access using approved devices through Tailscale; 
 
 ## What I learned
 
@@ -66,6 +92,8 @@ I do have plans to implement Tailscale later in order to add remote access.
 - How containers communicate using service names
 - How to access a self-hosted web app from other devices on the LAN
 - How to troubleshoot database connection settings during setup
+- Tailscale install and setup
+- Adding trusted domains to Nextcloud config for remote access
 
 ## Status
 
@@ -75,7 +103,7 @@ I do have plans to implement Tailscale later in order to add remote access.
 - [x] Uploaded test files
 - [x] Verified local LAN access
 - [x] Test persistence after full server reboot
-- [ ] Add Tailscale remote access
+- [x] Add Tailscale remote access
 
 
 
