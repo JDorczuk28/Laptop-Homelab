@@ -68,6 +68,17 @@ which gives a status screen like this:
 <img width="553" height="148" alt="image" src="https://github.com/user-attachments/assets/0a4a146c-c883-4c06-ab91-ead62b872455" />
 
 
+## Notes
+
+Fail2ban does not replace SSH hardening. It adds another layer of protection.
+
+This setup is used alongside:
+
+- SSH key-based authentication
+- Disabled root SSH login
+- Disabled password authentication
+- UFW firewall rules
+- Tailscale for private remote access
 
 
 
