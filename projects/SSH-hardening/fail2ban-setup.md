@@ -8,12 +8,12 @@ Utilize Fail2Ban as well as SSH-hardening in order to protect my homelab server 
 ## Install and Setup
 
 We can install fail2ban using
-bash```
+```bash
 sudo apt update
 ```
 
 to make sure everything is up to date first, then:
-bash```
+```bash
 sudo apt install fail2ban
 ```
 which installs the software.
@@ -21,12 +21,12 @@ which installs the software.
 ## Configuration
 
 From here we can create a jail override file, which inherits all the defaults from the config file minus the changes that we make in the override file, we can do that by doing:
-bash```
+```bash
 sudo nano /etc/fail2ban/jail.d/sshd.local
 ```
 
 These are the contents of that file, which protect my server from brute force:
-text```
+```text
 [sshd]
 enabled = true
 port = 22 
@@ -47,17 +47,17 @@ findtime = 600 - looks back over a 600-second, or 10-minute window. (3 failures 
 ## Activation 
 
 We can enable fail2ban using:
-bash```
+```bash
 sudo systemctl enable fail2ban
 ```
 
 Then start the service using:
-bash```
+```bash
 sudo systemctl start fail2ban
 ```
 
 We can then check the status using:
-bash```
+```bash
 sudo fail2ban-client status sshd
 ```
 
