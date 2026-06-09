@@ -15,3 +15,6 @@ Allowed sources:
 - `tailscale0` - private Tailscale network
 
 Broad `Anywhere` rules were removed to reduce unnecessary exposure.
+
+
+<img width="501" height="264" alt="image" src="https://github.com/user-attachments/assets/3a22f6b2-c41f-4b5e-9d00-15581434885f" />
